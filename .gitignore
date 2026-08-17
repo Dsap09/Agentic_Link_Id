@@ -22,3 +22,9 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+
+# Local files & docs
+local/
+brief.md
+prd.md
+
