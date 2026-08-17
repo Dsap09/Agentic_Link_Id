@@ -23,8 +23,8 @@ logger = logging.getLogger(__name__)
 
 # Model configuration
 GEMINI_MODEL = "gemini-3.6-flash"
-GROQ_MODEL = "llama-3.3-70b-versatile"
-OPENROUTER_MODEL = "meta-llama/llama-3.1-8b-instruct:free"
+GROQ_MODEL = "qwen/qwen3.6-27b"
+OPENROUTER_MODEL = "nvidia/nemotron-3.5-lightning:free"
 HF_MODEL = "meta-llama/Llama-3.2-3B-Instruct"
 
 # System instruction untuk output JSON terstruktur
@@ -98,7 +98,6 @@ def _call_groq(prompt: str) -> str:
             {"role": "user", "content": prompt},
         ],
         "temperature": 0.7,
-        "response_format": {"type": "json_object"},
     }
 
     resp = requests.post(url, headers=headers, json=payload, timeout=30)
